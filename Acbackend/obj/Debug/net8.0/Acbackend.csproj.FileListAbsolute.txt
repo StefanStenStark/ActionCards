@@ -252,3 +252,4 @@
 /Users/salt-dev/Coding/Hackweek/ActionCards/Acbackend/obj/Debug/net8.0/Acbackend.pdb
 /Users/salt-dev/Coding/Hackweek/ActionCards/Acbackend/obj/Debug/net8.0/Acbackend.genruntimeconfig.cache
 /Users/salt-dev/Coding/Hackweek/ActionCards/Acbackend/obj/Debug/net8.0/ref/Acbackend.dll
+/Users/salt-dev/Coding/Hackweek/ActionCards/Acbackend/obj/Debug/net8.0/Acbackend.sourcelink.json
