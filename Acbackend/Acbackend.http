@@ -1,0 +1,6 @@
+@Acbackend_HostAddress = http://localhost:5204
+
+GET {{Acbackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
