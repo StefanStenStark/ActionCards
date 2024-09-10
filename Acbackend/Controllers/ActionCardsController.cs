@@ -39,9 +39,13 @@ namespace Acbackend.Controllers
                 .Where(card => card.Type == type)
                 .ToListAsync();
 
-            if (actionCards == null || actionCards.Count < 3)
+            if (actionCards == null || actionCards.Count == 0)
             {
                 return NotFound($"No action cards found with the type '{type}'.");
+            }
+             if (actionCards.Count < 3)
+            {
+                return NotFound($"Less then three cards found of'{type}'.");
             }
 
             var random = new Random();
