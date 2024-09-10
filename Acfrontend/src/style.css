@@ -1,0 +1,10 @@
+main {
+  margin-top: 80px;
+}
+.main-section {
+  border-width: 2px 0px 0px 0px;
+  border-style: groove;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
