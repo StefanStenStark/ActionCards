@@ -7,7 +7,6 @@ export type card = {
 const url: string = "http://localhost:5204/api/ActionCards";
 
 export async function fetchCardData(): Promise<card[]> {
-  // Ensure return type
   try {
     const response: Response = await fetch(url);
 
@@ -20,7 +19,7 @@ export async function fetchCardData(): Promise<card[]> {
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return []; // Return an empty array in case of error
+    return [];
   }
 }
 

@@ -39,12 +39,15 @@ namespace Acbackend.Controllers
                 .Where(card => card.Type == type)
                 .ToListAsync();
 
-            if (actionCards == null || actionCards.Count == 0)
+            if (actionCards == null || actionCards.Count < 3)
             {
                 return NotFound($"No action cards found with the type '{type}'.");
             }
 
-            return Ok(actionCards);
+            var random = new Random();
+            var selectedCards = actionCards.OrderBy(_ => random.Next()).Take(3).ToList();
+
+            return Ok(selectedCards);
         }
 
         // GET: api/ActionCards/5

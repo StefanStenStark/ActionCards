@@ -13,9 +13,14 @@ function Card({ card }: { card: card }) {
         <img src="/ActionCard.jpg" className="cardholder-card-image" />
       ) : (
         <>
-          <h1>{card.title}</h1>
-          <p>{card.instruction}</p>
-          <button>Accept</button>
+          <div className="cardholder-card-front">
+            <h1>{card.title}</h1>
+            <p>{card.instruction}</p>
+          </div>
+
+          <div className="card-bottom">
+            <button>Accept</button>
+          </div>
         </>
       )}
     </div>
@@ -43,9 +48,9 @@ export default function CardHolder({ title }: { title: string }) {
           <p>Loading...</p>
         ) : (
           <>
-            <Card card={cards[Math.floor(Math.random() * cards.length)]} />
-            <Card card={cards[Math.floor(Math.random() * cards.length)]} />
-            <Card card={cards[Math.floor(Math.random() * cards.length)]} />
+            <Card card={cards[0]} />
+            <Card card={cards[1]} />
+            <Card card={cards[2]} />
           </>
         )}
       </div>
