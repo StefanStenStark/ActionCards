@@ -5,8 +5,6 @@ function App() {
     <>
       <main>
         <CardHolder title="Your cards" />
-        <CardHolder title="Creative cards" />
-        <CardHolder title="Cleaning cards" />
       </main>
     </>
   );

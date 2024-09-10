@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { card, fetchCardData } from "./CardFetcher";
+import { card, fetchCardsByType } from "./CardFetcher";
 
 function Card({ card }: { card: card }) {
   const [showFront, setShowFront] = useState(false);
@@ -28,12 +28,12 @@ export default function CardHolder({ title }: { title: string }) {
 
   useEffect(() => {
     async function loadCards() {
-      const fetchedCards = await fetchCardData();
+      const fetchedCards = await fetchCardsByType(title);
       setCards(fetchedCards);
       setIsLoading(false);
     }
     loadCards();
-  }, []);
+  }, [title]);
 
   return (
     <section className="main-section">
@@ -43,7 +43,6 @@ export default function CardHolder({ title }: { title: string }) {
           <p>Loading...</p>
         ) : (
           <>
-            {cards.length > 0 && <h3>{cards[0].title}</h3>}
             <Card card={cards[0]} />
             <Card card={cards[1]} />
             <Card card={cards[2]} />
