@@ -1,15 +1,28 @@
+html {
+  background-color: rgb(60, 57, 57);
+}
 main {
   margin-top: 80px;
 }
 .main-section {
+  color: snow;
   border-width: 2px 0px 0px 0px;
-  border-style: groove;
+  border-style: solid;
+  border-color: snow;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.cardholder-holder {
+  flex-direction: row;
 }
 .cardholder-card {
   width: 150px;
-  height: 200px;
+  height: 220px;
   border-radius: 10px;
+  margin: 5px;
+}
+.cardholder-title {
 }
