@@ -43,9 +43,9 @@ export default function CardHolder({ title }: { title: string }) {
           <p>Loading...</p>
         ) : (
           <>
-            <Card card={cards[0]} />
-            <Card card={cards[1]} />
-            <Card card={cards[2]} />
+            <Card card={cards[Math.floor(Math.random() * cards.length)]} />
+            <Card card={cards[Math.floor(Math.random() * cards.length)]} />
+            <Card card={cards[Math.floor(Math.random() * cards.length)]} />
           </>
         )}
       </div>
