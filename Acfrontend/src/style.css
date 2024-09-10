@@ -16,13 +16,20 @@ main {
 }
 
 .cardholder-holder {
+  display: flex;
   flex-direction: row;
 }
 .cardholder-card {
+  background-color: brown;
   width: 150px;
   height: 220px;
   border-radius: 10px;
   margin: 5px;
+}
+.cardholder-card-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 .cardholder-title {
 }
