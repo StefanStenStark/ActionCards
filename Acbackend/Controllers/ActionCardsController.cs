@@ -53,6 +53,17 @@ namespace Acbackend.Controllers
 
             return Ok(selectedCards);
         }
+            // GET: api/ActionCards/types
+        [HttpGet("types")]
+        public async Task<ActionResult<IEnumerable<string>>> GetUniqueTypes()
+        {
+            var uniqueTypes = await _context.ActionCard
+                                            .Select(card => card.Type)
+                                            .Distinct()
+                                            .ToListAsync();
+
+            return Ok(uniqueTypes);
+        }
 
         // GET: api/ActionCards/5
         [HttpGet("{id}")]

@@ -41,3 +41,19 @@ export async function fetchCardsByType(type: string): Promise<card[]> {
     return [];
   }
 }
+export async function fetchUniqueTypes(): Promise<string[]> {
+  const url = "http://localhost:5204/api/ActionCards/types";
+  try {
+    const response: Response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data: string[] = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching unique types:", error);
+    return []; // Return an empty array in case of error
+  }
+}
