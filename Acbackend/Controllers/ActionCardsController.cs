@@ -53,6 +53,25 @@ namespace Acbackend.Controllers
 
             return Ok(selectedCards);
         }
+         // GET: api/ActionCards/bytype/{type}
+        [HttpGet("allcardsbytype/{type}")]
+        public async Task<ActionResult<IEnumerable<ActionCard>>> GetAllActionCardsByType(string type)
+        {
+            if (string.IsNullOrEmpty(type))
+            {
+                return BadRequest("Type parameter is required.");
+            }
+
+            var actionCards = await _context.ActionCard
+                .Where(card => card.Type == type)
+                .ToListAsync();
+
+            if (actionCards == null || actionCards.Count == 0)
+            {
+                return NotFound($"No action cards found with the type '{type}'.");
+            }
+            return Ok(actionCards);
+        }
             // GET: api/ActionCards/types
         [HttpGet("types")]
         public async Task<ActionResult<IEnumerable<string>>> GetUniqueTypes()

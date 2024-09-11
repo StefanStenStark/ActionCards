@@ -41,6 +41,26 @@ export async function fetchCardsByType(type: string): Promise<card[]> {
     return [];
   }
 }
+
+export async function fetchAllCardsByType(type: string): Promise<card[]> {
+  const urlByType = `http://localhost:5204/api/ActionCards/allcardsbytype/${type}`;
+
+  try {
+    const response: Response = await fetch(urlByType);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data: card[] = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error(`Error fetching data for type "${type}":`, error);
+    return [];
+  }
+}
+
 export async function fetchUniqueTypes(): Promise<string[]> {
   const url = "http://localhost:5204/api/ActionCards/types";
   try {
@@ -54,6 +74,26 @@ export async function fetchUniqueTypes(): Promise<string[]> {
     return data;
   } catch (error) {
     console.error("Error fetching unique types:", error);
-    return []; // Return an empty array in case of error
+    return [];
+  }
+}
+
+export async function updateCard(updatedCard: card): Promise<void> {
+  const urlById = `${url}/${updatedCard.id}`;
+
+  try {
+    const response: Response = await fetch(urlById, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedCard),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  } catch (error) {
+    console.error(`Error updating card with id ${updatedCard.id}:`, error);
   }
 }
