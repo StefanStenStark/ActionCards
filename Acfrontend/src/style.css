@@ -45,3 +45,29 @@ main {
 }
 .cardholder-title {
 }
+
+.dropdown-selector {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.custom-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  background-size: 1em;
+  background-color: white;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-select:hover {
+  border-color: #888;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: #555;
+}
