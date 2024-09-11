@@ -97,3 +97,25 @@ export async function updateCard(updatedCard: card): Promise<void> {
     console.error(`Error updating card with id ${updatedCard.id}:`, error);
   }
 }
+
+export async function createCard(newCard: card): Promise<card | null> {
+  try {
+    const response: Response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newCard),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const createdCard: card = await response.json();
+    return createdCard;
+  } catch (error) {
+    console.error("Error creating new card:", error);
+    return null;
+  }
+}

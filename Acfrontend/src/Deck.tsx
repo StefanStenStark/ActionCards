@@ -5,6 +5,7 @@ import {
   fetchAllCardsByType,
   card,
   updateCard,
+  createCard,
 } from "./CardFetcher";
 
 function CardEdit({ card }: { card: card }) {
@@ -95,6 +96,10 @@ export default function Deck() {
   const [selectedType, setSelectedType] = useState<string>("");
   const [cards, setCards] = useState<card[]>([]);
   const [loading, setLoading] = useState(false);
+  const [newCardTitle, setNewCardTitle] = useState("new title");
+  const [newCardInstruction, setNewCardInstruction] = useState(
+    "new card instruction"
+  );
 
   useEffect(() => {
     if (selectedType) {
@@ -105,6 +110,22 @@ export default function Deck() {
       });
     }
   }, [selectedType]);
+
+  async function handleCreate() {
+    if (!selectedType) return;
+
+    const newCard: card = {
+      type: selectedType,
+      title: newCardTitle,
+      instruction: newCardInstruction,
+    };
+
+    const createdCard = await createCard(newCard);
+
+    if (createdCard) {
+      setCards([...cards, createdCard]);
+    }
+  }
 
   return (
     <>
@@ -122,11 +143,24 @@ export default function Deck() {
               <>
                 <div className="cardholder-card">
                   <div className="cardholder-card-front">
-                    <h1>New card</h1>
-                    <p>New instruction</p>
+                    <input
+                      type="text"
+                      name="title"
+                      value={newCardTitle}
+                      onChange={(event) => setNewCardTitle(event.target.value)}
+                      placeholder="Title"
+                    />
+                    <textarea
+                      name="instruction"
+                      value={newCardInstruction}
+                      onChange={(event) =>
+                        setNewCardInstruction(event.target.value)
+                      }
+                      placeholder="Instruction"
+                    />
                   </div>
                   <div className="card-bottom">
-                    <button>Create</button>
+                    <button onClick={handleCreate}>Create</button>
                   </div>
                 </div>
 
