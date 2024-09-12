@@ -16,7 +16,7 @@ function Card({ card }: { card: card }) {
       ) : (
         <>
           <div className="cardholder-card-front">
-            <h1>{card.title}</h1>
+            <h3>{card.title}</h3>
             <p>{card.instruction}</p>
           </div>
 

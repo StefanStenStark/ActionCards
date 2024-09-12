@@ -55,7 +55,9 @@ export default function CardEdit({ card }: { card: card }) {
           />
         </div>
         <div className="card-bottom">
-          <button onClick={handleUpdate}>Update</button>
+          <button className="card-button" onClick={handleUpdate}>
+            Update
+          </button>
         </div>
       </div>
     </>

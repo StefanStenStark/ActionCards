@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./style.css";
 
 export default function AcceptCardButton() {
   const [startTimer, setStartTimer] = useState(false);
@@ -25,7 +26,9 @@ export default function AcceptCardButton() {
   return (
     <>
       {!startTimer ? (
-        <button onClick={() => setStartTimer(true)}>Accept</button>
+        <button className="card-button" onClick={() => setStartTimer(true)}>
+          Accept
+        </button>
       ) : (
         <p>{formatTime(timeLeft)}</p>
       )}

@@ -65,7 +65,9 @@ export default function CreateNewCard({
         />
       </div>
       <div className="card-bottom">
-        <button onClick={handleCreate}>Create</button>
+        <button className="card-button" onClick={handleCreate}>
+          Create
+        </button>
       </div>
     </div>
   );
