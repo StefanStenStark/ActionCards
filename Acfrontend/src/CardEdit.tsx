@@ -1,8 +1,14 @@
 import { useState } from "react";
-import { card, updateCard } from "./CardFetcher";
+import { card, deleteCard, updateCard } from "./CardFetcher";
 import "./style.css";
 
-export default function CardEdit({ card }: { card: card }) {
+export default function CardEdit({
+  card,
+  onDelete,
+}: {
+  card: card;
+  onDelete: (id: number) => void;
+}) {
   const [newCardType, setNewCardType] = useState(card.type);
   const [newCardTitle, setNewCardTitle] = useState(card.title);
   const [newCardInstruction, setNewCardInstruction] = useState(
@@ -17,6 +23,10 @@ export default function CardEdit({ card }: { card: card }) {
       instruction: newCardInstruction,
     };
     await updateCard(updatedCard);
+  }
+  async function handleDelete(id: number) {
+    await deleteCard(id);
+    onDelete(id);
   }
   return (
     <>
@@ -57,6 +67,12 @@ export default function CardEdit({ card }: { card: card }) {
         <div className="card-bottom">
           <button className="card-button" onClick={handleUpdate}>
             Update
+          </button>
+          <button
+            className="card-button"
+            onClick={() => handleDelete(card.id!)}
+          >
+            Delete
           </button>
         </div>
       </div>

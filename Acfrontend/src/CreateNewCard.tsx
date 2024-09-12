@@ -38,7 +38,7 @@ export default function CreateNewCard({
           type="text"
           id="type"
           name="type"
-          value={selectedType}
+          value={newCardType}
           onChange={(event) => setNewCardType(event.target.value)}
           placeholder="Type"
         />

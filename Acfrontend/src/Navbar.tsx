@@ -7,7 +7,7 @@ export default function Navbar() {
 
       <Link to="/Deck">Deck</Link>
 
-      <Link to="/">Home</Link>
+      <Link to="/Profile">Profile</Link>
     </nav>
   );
 }

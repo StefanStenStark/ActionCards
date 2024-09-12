@@ -119,3 +119,20 @@ export async function createCard(newCard: card): Promise<card | null> {
     return null;
   }
 }
+export async function deleteCard(id: number): Promise<void> {
+  const deleteUrl = `${url}/${id}`;
+
+  try {
+    const response: Response = await fetch(deleteUrl, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    console.log(`Card with id ${id} deleted successfully`);
+  } catch (error) {
+    console.error(`Error deleting card with id ${id}:`, error);
+  }
+}

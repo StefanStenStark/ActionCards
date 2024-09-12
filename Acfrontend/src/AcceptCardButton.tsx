@@ -3,7 +3,7 @@ import "./style.css";
 
 export default function AcceptCardButton() {
   const [startTimer, setStartTimer] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(120); // 120 seconds equals 02:00
+  const [timeLeft, setTimeLeft] = useState(120);
 
   useEffect(() => {
     if (startTimer && timeLeft > 0) {

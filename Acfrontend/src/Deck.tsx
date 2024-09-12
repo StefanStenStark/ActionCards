@@ -6,7 +6,7 @@ import DropdownSelector from "./DropdownSelector";
 import CreateNewCard from "./CreateNewCard";
 
 export default function Deck() {
-  const [selectedType, setSelectedType] = useState("all");
+  const [selectedType, setSelectedType] = useState("All");
   const [cards, setCards] = useState<card[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -14,7 +14,7 @@ export default function Deck() {
     if (selectedType) {
       setLoading(true);
       const fetchData =
-        selectedType === "all"
+        selectedType === "All"
           ? fetchCardData()
           : fetchAllCardsByType(selectedType);
 
@@ -24,6 +24,9 @@ export default function Deck() {
       });
     }
   }, [selectedType]);
+  function handleCardDelete(id: number) {
+    setCards((prevCards) => prevCards.filter((card) => card.id !== id));
+  }
 
   return (
     <>
@@ -44,8 +47,12 @@ export default function Deck() {
                   cards={cards}
                   setCards={setCards}
                 />
-                {cards.map((card, index) => (
-                  <CardEdit key={index} card={card} />
+                {cards.map((card) => (
+                  <CardEdit
+                    key={card.id}
+                    card={card}
+                    onDelete={handleCardDelete}
+                  />
                 ))}
               </>
             )}

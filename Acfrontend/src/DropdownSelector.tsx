@@ -32,6 +32,7 @@ export default function DropdownSelector({
         <p>Loading...</p>
       ) : (
         <select id="options" className="custom-select" onChange={handleChange}>
+          <option value="All">All</option>
           {types.map((type, index) => (
             <option key={index} value={type}>
               {type}

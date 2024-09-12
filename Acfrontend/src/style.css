@@ -54,6 +54,8 @@ textarea {
   transform: scale(1.01);
 }
 .cardholder-card-front {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(174, 161, 122);
   margin: 10px;
   border-radius: 10px;
@@ -117,12 +119,13 @@ textarea {
   color: #333;
   border: 2px solid #ddd;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   border-radius: 4px;
+  margin: 3px;
 }
 
 .card-button:hover {
@@ -134,4 +137,9 @@ textarea {
   background-color: #d0d0d0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
+}
+.cardholder-card-title {
+  border-width: 0px 0px 2px 0px;
+  border-style: groove;
+  border-color: snow;
 }

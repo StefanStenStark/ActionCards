@@ -5,6 +5,10 @@ import "./style.css";
 
 function Card({ card }: { card: card }) {
   const [showFront, setShowFront] = useState(false);
+  const [selectedImage] = useState<string>(
+    localStorage.getItem("selectedCardImage") || "FutureCard"
+  );
+
   function handleClick() {
     setShowFront(true);
   }
@@ -12,11 +16,11 @@ function Card({ card }: { card: card }) {
   return (
     <div className="cardholder-card" onClick={handleClick}>
       {!showFront ? (
-        <img src="/FutureCard.jpg" className="cardholder-card-image" />
+        <img src={`/${selectedImage}.jpg`} className="cardholder-card-image" />
       ) : (
         <>
           <div className="cardholder-card-front">
-            <h3>{card.title}</h3>
+            <h3 className="cardholder-card-title">{card.title}</h3>
             <p>{card.instruction}</p>
           </div>
 
