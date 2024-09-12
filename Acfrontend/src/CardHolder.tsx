@@ -12,7 +12,7 @@ function Card({ card }: { card: card }) {
   return (
     <div className="cardholder-card" onClick={handleClick}>
       {!showFront ? (
-        <img src="/ActionCard.jpg" className="cardholder-card-image" />
+        <img src="/FutureCard.jpg" className="cardholder-card-image" />
       ) : (
         <>
           <div className="cardholder-card-front">

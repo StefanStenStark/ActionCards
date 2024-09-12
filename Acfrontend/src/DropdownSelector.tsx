@@ -32,7 +32,7 @@ export default function DropdownSelector({
         <p>Loading...</p>
       ) : (
         <select id="options" className="custom-select" onChange={handleChange}>
-          <option value="">Select a type</option>
+          <option value="all">All cards</option>
           {types.map((type, index) => (
             <option key={index} value={type}>
               {type}
