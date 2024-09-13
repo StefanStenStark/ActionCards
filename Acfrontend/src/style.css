@@ -80,6 +80,11 @@ textarea {
   width: 100%;
   box-sizing: border-box;
 }
+.textarea-expand {
+  flex-grow: 1; /* Make the textarea take up available space */
+  resize: none; /* Optional: Disable manual resizing of the textarea */
+  min-height: 100px; /* Ensure a minimum height */
+}
 .cardholder-title {
   border-width: 0px 1px 2px 1px;
   border-style: groove;

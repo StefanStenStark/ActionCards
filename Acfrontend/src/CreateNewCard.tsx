@@ -56,7 +56,7 @@ export default function CreateNewCard({
 
         <label htmlFor="instruction">Instruction:</label>
         <textarea
-          className="cardholder-input"
+          className="cardholder-input textarea-expand"
           id="instruction"
           name="instruction"
           value={newCardInstruction}

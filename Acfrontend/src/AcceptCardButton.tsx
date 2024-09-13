@@ -30,7 +30,7 @@ export default function AcceptCardButton() {
           Accept
         </button>
       ) : (
-        <p>{formatTime(timeLeft)}</p>
+        <h2>{formatTime(timeLeft)}</h2>
       )}
     </>
   );
