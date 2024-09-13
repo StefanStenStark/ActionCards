@@ -3,7 +3,7 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/ActionCards">ActionCards</Link>
+      <Link to="/ActionCards">Action</Link>
 
       <Link to="/Deck">Deck</Link>
 

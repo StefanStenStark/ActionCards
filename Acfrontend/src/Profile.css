@@ -7,6 +7,11 @@ p {
   justify-content: center;
   align-items: center;
   margin: 20px;
+  border-width: 0px 2px 0px 0px;
+  border-color: snow;
+  border-style: solid;
+  margin: 16px;
+  padding-right: 34px;
 }
 
 .profile-picture {
@@ -19,7 +24,7 @@ p {
 }
 
 .profile-card-image {
-  width: 35px;
+  width: 32px;
   height: 50px;
   border-radius: 15%;
   border-color: snow;
@@ -53,6 +58,8 @@ p {
   border-radius: 10px;
   width: 100px;
   height: 150px;
+  border-color: snow;
+  border-style: solid;
 }
 
 .card-image-selection {

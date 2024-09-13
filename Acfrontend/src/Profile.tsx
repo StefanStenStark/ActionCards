@@ -30,8 +30,6 @@ export default function Profile() {
           <div className="profile-stats">
             <p>Cards completed: 20</p>
             <p>Cards completed in the same day: 5</p>
-          </div>
-          <div className="profile-stats">
             <p>Days in a row: 4</p>
             <p>Top days in a row: 10</p>
           </div>
