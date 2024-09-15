@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { card, createCard } from "./CardFetcher";
+import { card, createCard } from "../../CardFetcher";
 
 export default function CreateNewCard({
   selectedType,

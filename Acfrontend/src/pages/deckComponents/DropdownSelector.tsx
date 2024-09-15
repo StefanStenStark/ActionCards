@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchUniqueTypes } from "./CardFetcher";
+import { fetchUniqueTypes } from "../../CardFetcher";
 
 export default function DropdownSelector({
   onTypeSelect,

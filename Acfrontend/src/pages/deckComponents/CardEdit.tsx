@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { card, deleteCard, updateCard } from "./CardFetcher";
-import "./style.css";
+import { card, deleteCard, updateCard } from "../../CardFetcher";
+import "../../styling/style.css";
 
 export default function CardEdit({
   card,

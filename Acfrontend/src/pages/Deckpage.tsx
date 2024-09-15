@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import "./style.css";
-import { fetchAllCardsByType, card, fetchCardData } from "./CardFetcher";
-import CardEdit from "./CardEdit";
-import DropdownSelector from "./DropdownSelector";
-import CreateNewCard from "./CreateNewCard";
+import "../styling/style.css";
+import { fetchAllCardsByType, card, fetchCardData } from "../CardFetcher";
+import CardEdit from "./deckComponents/CardEdit";
+import DropdownSelector from "./deckComponents/DropdownSelector";
+import CreateNewCard from "./deckComponents/CreateNewCard";
 
-export default function Deck() {
+export default function DeckPage() {
   const [selectedType, setSelectedType] = useState("All");
   const [cards, setCards] = useState<card[]>([]);
   const [loading, setLoading] = useState(false);

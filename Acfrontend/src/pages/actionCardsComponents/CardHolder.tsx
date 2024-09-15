@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { card, fetchCardsByType } from "./CardFetcher";
+import { card, fetchCardsByType } from "../../CardFetcher";
 import AcceptCardButton from "./AcceptCardButton";
-import "./style.css";
+import "../../styling/style.css";
 
 function Card({ card }: { card: card }) {
   const [showFront, setShowFront] = useState(false);

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import "./Profile.css";
-import "./style.css";
+import "../styling/Profile.css";
+import "../styling/style.css";
 
-export default function Profile() {
+export default function ProfilePage() {
   const [selectedImage, setSelectedImage] = useState<string>(
     localStorage.getItem("selectedCardImage") || "ForeverCard"
   );

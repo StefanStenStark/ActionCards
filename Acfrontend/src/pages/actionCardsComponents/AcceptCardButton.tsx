@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./style.css";
+import "../../styling/style.css";
 
 export default function AcceptCardButton() {
   const [startTimer, setStartTimer] = useState(false);

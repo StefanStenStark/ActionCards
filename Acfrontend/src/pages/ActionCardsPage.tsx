@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchUniqueTypes } from "./CardFetcher";
-import CardHolder from "./CardHolder";
+import { fetchUniqueTypes } from "../CardFetcher";
+import CardHolder from "./actionCardsComponents/CardHolder";
 
 export default function ActionCardsPage() {
   const [uniqueTypes, setUniqueTypes] = useState<string[]>([]);

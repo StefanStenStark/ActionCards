@@ -1,17 +1,17 @@
-import "./style.css";
+import "./styling/style.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./Navbar";
-import Deck from "./Deck";
-import Profile from "./Profile";
-import ActionCardsPage from "./ActionCardsPage";
+import Navbar from "./pages/Navbar";
+import DeckPage from "./pages/Deckpage";
+import ProfilePage from "./pages/ProfilePage";
+import ActionCardsPage from "./pages/ActionCardsPage";
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/ActionCards" element={<ActionCardsPage />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/Deck" element={<Deck />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/Deck" element={<DeckPage />} />
       </Routes>
     </Router>
   );
