@@ -7,7 +7,13 @@ export default function Profile() {
     localStorage.getItem("selectedCardImage") || "ForeverCard"
   );
 
-  const cardImages = ["ForeverCard", "FutureCard", "MysticCard", "RoyalCard"];
+  const cardImages = [
+    "ForeverCard",
+    "FutureCard",
+    "MysticCard",
+    "RoyalCard",
+    "RoyalFairyCard",
+  ];
 
   useEffect(() => {
     localStorage.setItem("selectedCardImage", selectedImage);
@@ -49,6 +55,30 @@ export default function Profile() {
                 onClick={() => setSelectedImage(image)}
               />
             ))}
+
+            <div className="card-image-container">
+              <img
+                src={"./VikingCard.jpg"}
+                className="card-image-option disabled-card"
+              />
+              <p className="hover-message">Compleate 35 cards to unlock!</p>
+            </div>
+
+            <div className="card-image-container">
+              <img
+                src={"./FairyCard.jpg"}
+                className="card-image-option disabled-card"
+              />
+              <p className="hover-message">Do card 12 days in a row!</p>
+            </div>
+
+            <div className="card-image-container">
+              <img
+                src={"./DarkVinesCard.jpg"}
+                className="card-image-option disabled-card"
+              />
+              <p className="hover-message">Compleate 9 cards in a day!</p>
+            </div>
           </div>
         </div>
       </section>

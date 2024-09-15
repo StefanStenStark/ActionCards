@@ -53,15 +53,6 @@ p {
   border-style: solid;
 }
 
-.card-image-option {
-  margin: 10px;
-  border-radius: 10px;
-  width: 100px;
-  height: 150px;
-  border-color: snow;
-  border-style: solid;
-}
-
 .card-image-selection {
   color: snow;
   display: flex;
@@ -84,4 +75,51 @@ p {
   padding-left: 20px;
   font-size: 18px;
   color: snow;
+}
+
+.card-image-option {
+  margin: 10px;
+  border-radius: 10px;
+  width: 100px;
+  height: 150px;
+  border-color: snow;
+  border-style: solid;
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.disabled-card {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.card-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-message {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for the message */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.card-image-container:hover .hover-message {
+  display: block;
+}
+
+.card-image-container:hover .disabled-card {
+  filter: grayscale(5%);
+  opacity: 0.8;
 }
